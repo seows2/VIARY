@@ -16,9 +16,9 @@ mongod   => 몽고DB
 설치
 
 ```bash
-git clone https://github.com/seows2/wotube
+git clone https://github.com/seows2/VIARY
 
-cd wotube
+cd VIARY
 
 npm install
 
