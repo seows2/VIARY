@@ -37,6 +37,16 @@ export const search = async (req, res) => {
     videos,
   });
 };
+export const getPrivate = (req, res) => {
+  res.render("private", {
+    pageTitle: "Private",
+  });
+};
+export const getGroup = (req, res) => {
+  res.render("group", {
+    pageTitle: "Group",
+  });
+};
 
 export const getupload = (req, res) => {
   res.render("upload", {

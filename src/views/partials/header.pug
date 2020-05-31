@@ -7,7 +7,7 @@ header.header
     .header__column
         ul.header__menu
             li
-                a(href=routes.join).active private
+                a(href=routes.join) private
             li
                 a(href=routes.login) group
     .header__column
@@ -17,9 +17,9 @@ header.header
         ul.header__menu__user
             if !loggedUser
                 li
-                    a(href=routes.join) 회원가입
+                    span.join 회원가입
                 li
-                    a(href=routes.login) 로그인
+                    span.login 로그인
             else
                 li
                     a(href=`/videos${routes.upload}`) 업로드

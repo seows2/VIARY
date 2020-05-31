@@ -1,4 +1,5 @@
 import "../scss/styles.scss";
 import "./videoRecorder";
-import "./delComments"
+import "./delComments";
 import "./addComments";
+import "./modal";

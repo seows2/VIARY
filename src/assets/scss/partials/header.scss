@@ -40,7 +40,8 @@
     }
     li {
       font-weight: 700;
-      a:after {
+      a:after,
+      span:after {
         content: " ";
         display: block;
         height: 2px;
@@ -48,10 +49,13 @@
         background-color: white;
         transition: width 0.5s;
       }
-      a:hover {
+      a:hover,
+      span:hover {
         color: royalblue;
+        cursor: pointer;
       }
-      a:hover:after {
+      a:hover:after,
+      span:hover:after {
         width: 100%;
         background-color: royalblue;
       }
