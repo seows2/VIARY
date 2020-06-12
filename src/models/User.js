@@ -11,6 +11,12 @@ const UserSchema = new mongoose.Schema({
   facebookId: Number,
   githubId: Number,
   KakaoId: Number,
+  groups: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Group",
+    },
+  ],
   comment: [
     {
       type: mongoose.Schema.Types.ObjectId,

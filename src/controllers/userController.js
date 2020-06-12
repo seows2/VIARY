@@ -14,7 +14,7 @@ export const postJoin = async (req, res, next) => {
   if (password !== password2) {
     req.flash("error", "패스워드가 일치하지 않습니다.");
     res.status(400);
-    res.redirect(routes.join);
+    res.redirect(routes.home);
   } else {
     try {
       const user = await User({
@@ -33,7 +33,7 @@ export const getlogin = (req, res) => {
 };
 
 export const postlogin = passport.authenticate("local", {
-  failureRedirect: routes.login,
+  failureRedirect: routes.home,
   successRedirect: routes.home,
   successFlash: "반갑습니다!",
   failureFlash: "로그인 실패, 아이디와 비밀번호를 확인해 주세요",
@@ -225,7 +225,7 @@ export const postChangePassword = async (req, res) => {
     }
     await req.user.changePassword(oldPasswod, newPassword);
     req.flash("success", "비밀번호 변경 완료");
-    res.redirect(routes.myPage);
+    res.redirect(routes.userDetail(req.user.id));
   } catch (error) {
     res.status(400);
     res.redirect(routes.changePassword, { pageTitle: "Change Password" });
