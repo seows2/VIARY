@@ -52,3 +52,7 @@ const PORT = 원하는 포트;
 - [ ] DB설계
 - [ ] Back 로직 설계
 - [ ] 구현
+
+
+맥북 몽고db   
+mongod --config /usr/local/etc/mongod.conf --fork 

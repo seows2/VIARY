@@ -37,16 +37,6 @@ export const search = async (req, res) => {
     videos,
   });
 };
-export const getPrivate = (req, res) => {
-  res.render("private", {
-    pageTitle: "Private",
-  });
-};
-export const getGroup = (req, res) => {
-  res.render("group", {
-    pageTitle: "Group",
-  });
-};
 
 export const getupload = (req, res) => {
   res.render("upload", {
@@ -72,6 +62,7 @@ export const videoDetail = async (req, res) => {
   const {
     params: { id },
   } = req;
+
   try {
     const video = await Video.findById(id)
       .populate("creator")
@@ -200,4 +191,28 @@ export const deleteComment = async (req, res) => {
   } finally {
     res.end();
   }
+};
+
+export const getPrivate = (req, res) => {
+  res.render("private", {
+    pageTitle: "Private",
+  });
+};
+export const getGroup = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  const videos = await Video.find({}).populate("creator");
+  let firstVideo = [];
+  if (id !== ":id") {
+    firstVideo = await Video.findById(id).populate("creator");
+  } else {
+    firstVideo = videos[0];
+  }
+
+  res.render("group", {
+    pageTitle: "Group",
+    firstVideo,
+    videos,
+  });
 };

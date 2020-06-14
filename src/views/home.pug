@@ -13,23 +13,4 @@ block content
                 creatorid : video.creator.id,
                 creatorname : video.creator.name
             })
-    .join__modal__container.hidden
-        .modal__overlay
-        .form-container.joinmodal
-            button.modal__close ❌
-            form(action = routes.join, method ="post")
-                input(type ="text", name ="name", placeholder = " 이름", required = true autocomplete="off")
-                input(type="email", name = "email", placeholder =" 이메일", required = true autocomplete="off")
-                input(type="password", name = "password", placeholder =" 비밀번호", required = true autocomplete="off")
-                input(type="password", name = "password2", placeholder =" 비밀번호 확인", required = true autocomplete="off")
-                input(type="submit", value="가입")
-            include partials/socialLogin
-    .login__modal__container.hidden
-        .modal__overlay
-        .form-container.loginmodal
-            button.modal__close ❌
-            form(action = routes.login, method ="post")
-                input(type="email", name = "email", placeholder =" 이메일" autocomplete="off")
-                input(type="password", name = "password", placeholder =" 비밀번호" autocomplete="off")
-                input(type="submit", value="로그인")
-            include partials/socialLogin
+    

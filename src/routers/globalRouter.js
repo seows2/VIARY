@@ -1,7 +1,7 @@
 import express from "express";
 import routes from "../routes";
 import fs from "fs";
-import { home, search } from "../controllers/videoController";
+import { home, search, getGroup } from "../controllers/videoController";
 import {
   getJoin,
   logout,
@@ -27,6 +27,8 @@ globalRouter.post(routes.login, onlyPublic, postlogin);
 globalRouter.get(routes.login, onlyPublic, getlogin);
 
 globalRouter.get(routes.home, home);
+
+globalRouter.get(routes.privateGroup(), getGroup);
 
 globalRouter.get(routes.logout, onlyPrivate, logout);
 
@@ -83,9 +85,9 @@ globalRouter.get("/logo", function (req, res) {
   });
 });
 
-const genRandom = () => {
+/* const genRandom = () => {
   const number = Math.floor(Math.random() * 4);
   return number;
-};
+}; */
 
 export default globalRouter;

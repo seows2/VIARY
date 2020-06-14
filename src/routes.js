@@ -42,6 +42,10 @@ const REGISTER_VIEW = "/:id/view"; //비디오 아이디
 const ADD_COMMENT = "/:id/comment";
 const DELETE_COMMENT = "/:id/delete";
 
+//GROUP
+
+const PRIVATEE_GROUP = "/group/:id";
+
 const routes = {
   home: HOME,
   join: JOIN,
@@ -102,6 +106,13 @@ const routes = {
       return `/api/${id}/delete`;
     } else {
       return DELETE_COMMENT;
+    }
+  },
+  privateGroup: (id) => {
+    if (id) {
+      return `/group/${id}`;
+    } else {
+      return PRIVATEE_GROUP;
     }
   },
 };
