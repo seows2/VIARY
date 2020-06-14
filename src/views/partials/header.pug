@@ -7,9 +7,9 @@ header.header
     .header__column
         ul.header__menu
             li
-                a(href=routes.privateGroup()) private
+                a(href=routes.privateGroup()).private private
             li
-                a(href=routes.login) group
+                a(href=routes.login).group group
     .header__column
         form(action = routes.search, method = "get")
             input(type = "text", placeholder = "검색", name = "term" autocomplete="off")

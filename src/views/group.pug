@@ -2,7 +2,10 @@ extends layouts/main
 
 block content
     .group__header
-        span 그룹헤더
+        span.group__header__title 그룹헤더
+        if loggedUser
+            a(href=`/videos${routes.upload}`)
+                button 업로드
     .group__section
         .video-detail__container
                     .video__player
@@ -19,9 +22,10 @@ block content
                                 img.vd-avatar(src=`${firstVideo.creator.avatarUrl}`)
                                 span.video__author-name #{firstVideo.creator.name}
                         p.video__description= firstVideo.description
-        .group__videos__names
+        .group__videos__lists
             each video in videos
-                .group__videos__name
+                .group__videos__list
                     a(href=routes.privateGroup(video.id))
-                        span= video.title
+                        span.group__video__title= video.title
+                    span.group__video__name= video.creator.name
                     

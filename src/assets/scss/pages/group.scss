@@ -1,17 +1,44 @@
 .group__header {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 70px;
   background-color: salmon;
-  font-size: 20px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  .group__header__title {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  button {
+    width: 70%;
+    position: relative;
+    margin-top: 15px;
+  }
 }
 
 .group__section {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  .group__videos__names {
-    span {
+  .group__videos__lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 50px;
+    .group__videos__list {
+      width: 200px;
+      height: 50px;
+      background-color: skyblue;
+      display: flex;
+      flex-direction: column;
+    }
+    .group__video__title {
       font-size: 20px;
+    }
+    .group__videos__name {
+      font-size: 10px;
     }
   }
 }
