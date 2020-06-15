@@ -44,7 +44,8 @@ const DELETE_COMMENT = "/:id/delete";
 
 //GROUP
 
-const PRIVATEE_GROUP = "/group/:id";
+const PRIVATEE_GROUP = "/private/:id";
+const PUBLIC_GROUP = "/group/:id";
 
 const routes = {
   home: HOME,
@@ -110,9 +111,16 @@ const routes = {
   },
   privateGroup: (id) => {
     if (id) {
-      return `/group/${id}`;
+      return `/private/${id}`;
     } else {
       return PRIVATEE_GROUP;
+    }
+  },
+  publicGroup: (id) => {
+    if (id) {
+      return `/group/${id}`;
+    } else {
+      return PUBLIC_GROUP;
     }
   },
 };

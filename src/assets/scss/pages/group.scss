@@ -3,9 +3,10 @@
   justify-content: space-between;
   width: 100%;
   height: 70px;
-  background-color: salmon;
+  background-color: #024959;
   font-size: 30px;
   margin-bottom: 20px;
+  border-radius: 20px;
   .group__header__title {
     margin-top: 20px;
     margin-left: 20px;
@@ -28,17 +29,30 @@
     margin-left: 20px;
     margin-right: 50px;
     .group__videos__list {
+      border-radius: 20px;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
       width: 200px;
       height: 50px;
-      background-color: skyblue;
+      background-color: #7eadbf;
       display: flex;
       flex-direction: column;
     }
     .group__video__title {
       font-size: 20px;
+      display: block;
+      text-align: center;
+      position: relative;
+      top: 11px;
+      right: 10px;
     }
-    .group__videos__name {
-      font-size: 10px;
+    .group__video__name {
+      font-size: 12px;
+      display: block;
+      text-align: end;
+      position: relative;
+      top: 8px;
+      right: 10px;
     }
   }
 }

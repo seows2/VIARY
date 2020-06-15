@@ -56,7 +56,7 @@ export const postupload = async (req, res) => {
   });
   req.user.videos.push(newVideo.id);
   req.user.save();
-  res.redirect(routes.videoDetail(newVideo.id));
+  res.redirect(routes.privateGroup(newVideo.id));
 };
 export const videoDetail = async (req, res) => {
   const {

@@ -29,6 +29,7 @@ globalRouter.get(routes.login, onlyPublic, getlogin);
 globalRouter.get(routes.home, home);
 
 globalRouter.get(routes.privateGroup(), getGroup);
+globalRouter.get(routes.publicGroup(), getGroup);
 
 globalRouter.get(routes.logout, onlyPrivate, logout);
 
