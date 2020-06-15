@@ -202,10 +202,24 @@ export const getGroup = async (req, res) => {
   const {
     params: { id },
   } = req;
-  const videos = await Video.find({}).populate("creator");
+  const videos = await Video.find({})
+    .populate("creator")
+    .populate({
+      path: "comment",
+      populate: {
+        path: "creator",
+      },
+    });
   let firstVideo = [];
   if (id !== ":id") {
-    firstVideo = await Video.findById(id).populate("creator");
+    firstVideo = await Video.findById(id)
+      .populate("creator")
+      .populate({
+        path: "comment",
+        populate: {
+          path: "creator",
+        },
+      });
   } else {
     firstVideo = videos[0];
   }
