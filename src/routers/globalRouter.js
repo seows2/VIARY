@@ -41,7 +41,7 @@ globalRouter.get(
   routes.githubCallback,
   passport.authenticate("github", {
     successFlash: "반갑습니다!",
-    failureRedirect: "/login",
+    failureRedirect: "/home",
   }),
   postGithubLogin
 );
@@ -54,7 +54,7 @@ globalRouter.get(
   routes.facebookCallback,
   passport.authenticate("facebook", {
     successFlash: "반갑습니다!",
-    failureRedirect: "/login",
+    failureRedirect: "/home",
   }),
   postFacebookLogin
 );
@@ -65,7 +65,7 @@ globalRouter.get(
   routes.kakaoCallback,
   passport.authenticate("kakao", {
     successFlash: "반갑습니다!",
-    failureRedirect: "/login",
+    failureRedirect: "/home",
   }),
   postKakaoLogin
 );
